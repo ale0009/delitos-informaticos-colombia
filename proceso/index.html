@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cómo se hizo · ¿Qué delito informático pasa en tu municipio?</title>
+  <meta name="description" content="La investigación sobre la Ley 1273 y la responsabilidad legal en TIC, y cómo se conectó con los datos abiertos de delitos informáticos de Colombia.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bangers&family=IBM+Plex+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F9F9F7'/%3E%3Cpath d='M16 3 29 27H3z' fill='%23CB433E' stroke='%230A090A' stroke-width='2.5' stroke-linejoin='round'/%3E%3Cpath d='M16 11v8M16 22v2' stroke='%23FFF' stroke-width='3'/%3E%3C/svg%3E">
+  <script type="module" src="../js/proceso.js"></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera">
+    <span class="kanji" aria-hidden="true">法</span>
+    <div class="titulo">
+      <p class="antetitulo">Cómo se hizo · investigación + datos abiertos</p>
+      <h1>De la Ley 1273 a tu municipio</h1>
+    </div>
+    <nav class="nav">
+      <a class="boton-linea" href="../">Volver a la herramienta</a>
+      <button type="button" class="boton-linea" id="tema" aria-label="Cambiar tema">Tema: auto</button>
+    </nav>
+  </header>
+
+  <main class="articulo" id="contenido">
+    <p class="vineta aviso-legal">Divulgación, no asesoría legal. Esto resume un trabajo académico y unos datos públicos; ante un caso real, acude a la Fiscalía, al CAI Virtual de la Policía o a un abogado.</p>
+
+    <nav class="indice vineta" aria-label="Índice">
+      <ol>
+        <li><a href="#pregunta">La pregunta</a></li>
+        <li><a href="#marco">Marco legal</a></li>
+        <li><a href="#penas">Penas y multas</a></li>
+        <li><a href="#casos">Casos y controles</a></li>
+        <li><a href="#datos">Datos abiertos</a></li>
+        <li><a href="#graficas">Gráficas</a></li>
+        <li><a href="#diseno">Diseño</a></li>
+        <li><a href="#limites">Limitaciones</a></li>
+        <li><a href="#fuentes">Fuentes</a></li>
+      </ol>
+    </nav>
+
+    <section class="bloque" id="pregunta">
+      <h2>La pregunta</h2>
+      <p>La investigación «<strong>Prevención frente a los Delitos Informáticos. Responsabilidad legal en TIC</strong>», de Mario Puerta y David Rincón con su grupo de la asignatura de auditoría de seguridad y normas, se preguntaba qué dice la ley colombiana de los delitos informáticos y qué tienen que hacer una organización y un profesional de TIC para prevenirlos y responder cuando ocurren.</p>
+      <p>Aquí la llevamos un paso más allá con otra pregunta: <strong>de esos delitos, ¿cuáles se denuncian de verdad, y dónde?</strong> Para responderla cruzamos el trabajo con el registro público de denuncias de la Policía, que el Ministerio de Defensa publica en datos.gov.co.</p>
+    </section>
+
+    <section class="bloque" id="marco">
+      <h2>Marco legal</h2>
+      <p>La investigación ordena las normas en una base y varias normas que la complementan:</p>
+      <dl class="glosario">
+        <dt>Ley 1273 de 2009</dt><dd>Añade al Código Penal el Título VII BIS, «De la protección de la información y de los datos», con un bien jurídico nuevo. Tipifica diez artículos, del 269A al 269J: nueve conductas y una regla de agravantes (269H).</dd>
+        <dt>Ley 1581 de 2012</dt><dd>Protección de datos personales. Desarrolla el hábeas data (art. 15 de la Constitución), es decir, el derecho a conocer, actualizar y rectificar tus datos. Fija principios como legalidad, finalidad, libertad, veracidad, transparencia, seguridad y confidencialidad, y distingue entre el <em>responsable</em> del tratamiento y el <em>encargado</em>.</dd>
+        <dt>Decreto 1377 de 2013</dt><dd>Reglamenta la Ley 1581: la autorización del titular debe ser previa, expresa e informada; toda organización necesita una política de tratamiento y un aviso de privacidad; la transferencia internacional solo se permite a países con protección adecuada.</dd>
+        <dt>Ley 1266 de 2008</dt><dd>Hábeas data financiero: centrales de riesgo; la información negativa caduca a los 4 años.</dd>
+        <dt>Ley 1621 de 2013</dt><dd>Inteligencia y contrainteligencia: límites y garantías de la inteligencia cibernética y la protección de infraestructuras críticas.</dd>
+        <dt>Circular Externa 007 de 2018 (SIC)</dt><dd>Obliga a reportar las brechas de seguridad que comprometan datos personales en un máximo de 15 días hábiles.</dd>
+        <dt>CONPES 3854 de 2016</dt><dd>Política nacional de seguridad digital, en cinco dimensiones: marco legal, gobierno, cultura, capacidades y cooperación.</dd>
+      </dl>
+    </section>
+
+    <section class="bloque" id="penas">
+      <h2>Penas y multas citadas</h2>
+      <p>SMMLV = salarios mínimos mensuales legales vigentes. Las cifras son las que cita la investigación; donde la presentación no da cifra, usamos la matriz Ley 1273 ↔ ISO 27001 del portafolio y lo indicamos.</p>
+      <div class="tabla-wrap">
+        <table class="tabla">
+          <thead><tr><th>Art.</th><th>Delito</th><th>Prisión</th><th>Multa</th><th>Fuente</th></tr></thead>
+          <tbody>
+            <tr><td class="num">269A</td><td>Acceso abusivo a un sistema informático</td><td class="num">48–96 meses</td><td class="num">100–1.000 SMMLV</td><td>investigación</td></tr>
+            <tr><td class="num">269B</td><td>Obstaculización ilegítima de sistema o red</td><td class="num">48–96 meses</td><td class="num">100–1.000 SMMLV</td><td>investigación</td></tr>
+            <tr><td class="num">269C</td><td>Interceptación de datos informáticos</td><td class="num">36–72 meses</td><td>—</td><td>investigación</td></tr>
+            <tr><td class="num">269D</td><td>Daño informático</td><td class="num">48–96 meses</td><td class="num">100–1.000 SMMLV</td><td>investigación</td></tr>
+            <tr><td class="num">269E</td><td>Uso de software malicioso</td><td class="num">48–96 meses</td><td class="num">100–1.000 SMMLV</td><td>matriz (no está en la presentación)</td></tr>
+            <tr><td class="num">269F</td><td>Violación de datos personales</td><td class="num">48–96 meses</td><td class="num">100–1.000 SMMLV</td><td>matriz (no está en la presentación)</td></tr>
+            <tr><td class="num">269G</td><td>Suplantación de sitios web (phishing)</td><td class="num">48–96 meses</td><td class="num">100–1.000 SMMLV</td><td>investigación</td></tr>
+            <tr><td class="num">269H</td><td>Circunstancias de agravación</td><td colspan="2">«La pena aumenta hasta en la mitad» (Estado, sector financiero, abuso de confianza) <span class="por-verificar">por verificar</span></td><td>investigación</td></tr>
+            <tr><td class="num">269I</td><td>Hurto por medios informáticos</td><td class="num">48–120 meses</td><td>según cuantía</td><td>investigación <span class="por-verificar">por verificar</span></td></tr>
+            <tr><td class="num">269J</td><td>Transferencia no consentida de activos</td><td class="num">48–120 meses</td><td>según perjuicio (investigación) · 200–1.500 SMMLV (matriz)</td><td>ambas</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Para las organizaciones, la investigación añade la vía administrativa: la SIC puede imponer <strong>multas de hasta 2.000 SMMLV</strong> por incumplir la Ley 1581, suspender actividades de tratamiento o cerrar operaciones. Aunque el Código Penal sanciona a personas naturales, la empresa puede responder civilmente por hechos de sus empleados (daño emergente y lucro cesante).</p>
+    </section>
+
+    <section class="bloque" id="casos">
+      <h2>Casos y controles</h2>
+      <p>La investigación expone cuatro casos ocurridos en Colombia. Aquí van anonimizados: lo que importa es el patrón, no el nombre.</p>
+      <div class="dos-col">
+        <div class="vineta"><h3>1 · Smishing masivo (julio de 2025)</h3><p>Miles de SMS falsos que suplantaban un sistema de pagos inmediatos y sus «llaves» llevaban a sitios falsos con filtro geográfico para robar credenciales bancarias y datos personales. Encaja con los arts. 269G y 269I. Lección: verificar directamente con la entidad y usar solo direcciones oficiales.</p></div>
+        <div class="vineta"><h3>2 · Filtración de una base de datos pública</h3><p>Datos personales de millones de ciudadanos, en poder de una entidad pública nacional, aparecieron en foros de hacking. La SIC abrió una investigación por una posible vulneración de la Ley 1581 (art. 269F en lo penal).</p></div>
+        <div class="vineta"><h3>3 · Phishing al sector financiero</h3><p>Una campaña de SMS y correos que suplantaba a bancos capturaba credenciales y hacía transferencias fraudulentas. Terminó con capturas por el art. 269G.</p></div>
+        <div class="vineta"><h3>4 · Sanción de la SIC</h3><p>Una empresa fue multada con 1.500 SMMLV por tratar datos sin autorización de los titulares y sin una política de tratamiento publicada.</p></div>
+      </div>
+      <h3>Lo que propone la investigación para prevenir</h3>
+      <ul>
+        <li><strong>Identidad y acceso:</strong> autenticación multifactor, mínimo privilegio, revisión periódica de permisos y contraseñas de 12 caracteres o más.</li>
+        <li><strong>Desarrollo seguro:</strong> DevSecOps, análisis estático y dinámico del código (SAST/DAST), revisión de dependencias y pruebas de penetración antes de producción.</li>
+        <li><strong>Protección de datos:</strong> cifrado AES-256 en reposo y TLS 1.3 en tránsito, tokenización, borrado seguro y copias cifradas con pruebas de recuperación.</li>
+        <li><strong>Monitoreo y respuesta:</strong> un SIEM (sistema que correlaciona eventos de seguridad), alertas y un plan de incidentes en cuatro fases: preparación; detección y análisis; contención y erradicación; recuperación y lecciones aprendidas.</li>
+      </ul>
+      <p>En la herramienta, cada artículo muestra el <strong>control de ISO/IEC 27001:2022</strong> que lo previene, tomado de la matriz Ley 1273 ↔ ISO 27001 del portafolio. Por ejemplo, el hurto informático (269I) se previene sobre todo con <em>8.5 Autenticación segura</em>, y la violación de datos (269F) con <em>5.34 Privacidad y protección de datos personales</em>.</p>
+    </section>
+
+    <section class="bloque" id="datos">
+      <h2>Cómo se conectó con los datos abiertos</h2>
+      <p>El dataset <code>4v6r-wu98</code> «Delitos informáticos» (Ministerio de Defensa en datos.gov.co, actualización mensual) tiene una fila por combinación de fecha, municipio y conducta, con columnas <code>fecha_hecho</code>, <code>cod_depto</code>, <code>departamento</code>, <code>cod_muni</code>, <code>municipio</code>, <code>descripcion_conducta</code> y <code>cantidad</code>. Se consulta con <strong>SoQL</strong>, el «SQL por URL» de la plataforma Socrata, y responde a cualquier página web (CORS abierto), así que no hace falta servidor.</p>
+      <ol class="tuberia">
+        <li><span class="paso">Paso 1</span><strong>Consultar</strong><small>SoQL con <code>$select</code>, <code>$where</code> y <code>$group</code>: la API suma por nosotros.</small></li>
+        <li><span class="paso">Paso 2</span><strong>Limpiar</strong><small>Del texto «ARTICULO 269F. …» se saca el código; los nombres se comparan sin tildes ni mayúsculas.</small></li>
+        <li><span class="paso">Paso 3</span><strong>Agregar</strong><small>Suma de <code>cantidad</code> (no de filas), años sin casos rellenados con 0 y totales por departamento.</small></li>
+        <li><span class="paso">Paso 4</span><strong>Cruzar</strong><small>Cada artículo se une con su pena (investigación) y sus controles ISO (matriz).</small></li>
+        <li><span class="paso">Paso 5</span><strong>Pintar</strong><small>SVG propio, sin librerías, y un respaldo fechado por si la API no responde.</small></li>
+      </ol>
+      <p>Así se piden, por ejemplo, los casos por artículo de un municipio. El nombre va entre comillas simples y, si trae un apóstrofo, se duplica (<code>'</code> → <code>''</code>) para que no rompa la consulta:</p>
+      <pre class="codigo">GET https://www.datos.gov.co/resource/4v6r-wu98.json
+  ?$select=descripcion_conducta, sum(cantidad) as n
+  &amp;$where=municipio='BARBOSA' AND departamento='SANTANDER'
+  &amp;$group=descripcion_conducta
+  &amp;$order=n DESC</pre>
+      <div class="dos-col">
+        <div class="vineta cifras">
+          <h3>Cifras del dataset (consulta del 10 nov 2026)</h3>
+          <ul>
+            <li>528.939 filas, pero <strong>535.034 casos</strong>: una fila puede tener <code>cantidad</code> mayor que 1, por eso se suma <code>cantidad</code>.</li>
+            <li>Hechos del 13 may 2006 al 30 sep 2026.</li>
+            <li>1.098 municipios y 33 departamentos con al menos una denuncia.</li>
+            <li>269I (hurto informático): 268.144 casos, el 50,1 % del total (calculado aquí). Junto con 269A y 269F suman el 84,1 % (calculado aquí).</li>
+            <li>Bogotá D.C. concentra 166.188 casos, el 31,1 % del país (calculado aquí).</li>
+          </ul>
+        </div>
+        <div class="vineta cifras">
+          <h3>Problemas de limpieza encontrados</h3>
+          <ul>
+            <li>Los nombres vienen en MAYÚSCULAS y sin tildes («MEDELLIN», «IBAGUE»), pero conservan la Ñ («NARIÑO»). La búsqueda acepta «Medellín», «medellin» y «Narino».</li>
+            <li><strong>65 nombres de municipio se repiten</strong> en varios departamentos (calculado aquí): hay 4 «Villanueva» y 3 «Granada». Por eso la consulta filtra por municipio <em>y</em> departamento.</li>
+            <li>El 269H (agravantes) aparece 4 veces aunque no es un delito por sí solo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="bloque" id="graficas">
+      <h2>Gráficas</h2>
+      <p class="nota-fuente">Hechas con el respaldo agregado del 10 nov 2026 (<code>datos/respaldo-2026-11-10.json</code>), que reproduce exactamente las sumas de la API ese día.</p>
+      <figure class="figura vineta">
+        <h3>Casos denunciados por artículo, todo el país</h3>
+        <div id="g-articulos" class="g-caja"></div>
+        <figcaption>El hurto por medios informáticos (rojo) es la mitad de todo lo denunciado. La interceptación, el daño, el malware y la obstaculización juntos no llegan al 4 % (calculado aquí).</figcaption>
+      </figure>
+      <div class="dos-col">
+        <figure class="figura vineta">
+          <h3>Evolución anual</h3>
+          <div id="g-anual" class="g-caja"></div>
+          <figcaption>De 22.092 casos en 2019 se pasó a 49.359 en 2020 (+123 %, calculado aquí), el año de la pandemia. El máximo de un año completo es 2024, con 74.845. La barra rayada es 2026, que va solo hasta el 30 de septiembre.</figcaption>
+        </figure>
+        <figure class="figura vineta">
+          <h3>Los 10 departamentos con más denuncias</h3>
+          <div id="g-deptos" class="g-caja"></div>
+          <figcaption>Las denuncias siguen a la población y a la banca digital: se concentran en las grandes ciudades.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="bloque" id="diseno">
+      <h2>Decisiones de diseño</h2>
+      <ol class="decisiones">
+        <li><strong>Una ficha, no un informe.</strong> Escribes un lugar y en una pantalla ves el total, el «nivel de amenaza», el ranking de artículos y la tendencia. Abre con Medellín marcado como ejemplo.</li>
+        <li><strong>El nivel de amenaza usa el puesto, no el promedio.</strong> El promedio por municipio es 487 casos, pero la mediana es solo 32 (calculado aquí): unas pocas ciudades inflan la media. Por eso el nivel (1 a 5) sale del percentil del lugar entre sus pares, con cortes en 50 %, 75 %, 90 % y 98 %. Es un indicador de esta herramienta, no oficial.</li>
+        <li><strong>Comparar perfiles, no solo totales.</strong> Cada barra tiene una marca negra con el peso de ese artículo en el país. Así se ve si en un lugar la violación de datos «pesa más» que en el resto de Colombia.</li>
+        <li><strong>«¡ALERTA!» solo una vez.</strong> La onomatopeya marca el artículo dominante y nada más. Si todo grita, nada se oye.</li>
+        <li><strong>En vivo, con red de seguridad.</strong> Cada ficha son dos consultas SoQL. Si fallan, la página lo dice y usa un respaldo agregado de 121 KB con todos los municipios, marcado «sin conexión: datos de ejemplo del 10 nov 2026».</li>
+      </ol>
+      <div class="dos-col">
+        <div class="vineta">
+          <h3>Paleta</h3>
+          <div class="paleta">
+            <span style="--c:#F9F9F7">Papel <code>#F9F9F7</code></span>
+            <span class="osc" style="--c:#0A090A">Tinta <code>#0A090A</code></span>
+            <span class="osc" style="--c:#CB433E">Alerta <code>#CB433E</code></span>
+            <span style="--c:#438FB8">Datos <code>#438FB8</code></span>
+            <span class="osc" style="--c:#141C33">Noche <code>#141C33</code></span>
+            <span class="osc" style="--c:#BA3937">Bermellón <code>#BA3937</code></span>
+          </div>
+        </div>
+        <div class="vineta">
+          <h3>Muestras: el medidor de nivel</h3>
+          <div class="versiones">
+            <div class="muestra"><span class="hud-l">Nivel 2 · Moderado</span><span class="barras-nivel" data-nivel="2"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><p>Cian mientras el lugar está por debajo del percentil 90.</p></div>
+            <div class="muestra"><span class="hud-l">Nivel 5 · Crítico</span><span class="barras-nivel" data-nivel="5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><p>Rojo en los niveles 4 y 5, como una barra de vida que se vacía.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bloque" id="limites">
+      <h2>Limitaciones</h2>
+      <ul>
+        <li><strong>Son denuncias registradas, no delitos reales.</strong> Muchas víctimas no denuncian (la llamada «cifra oculta»), sobre todo en municipios pequeños o cuando el monto es bajo. Un municipio con pocas denuncias no es necesariamente más seguro.</li>
+        <li>El lugar es el que quedó en el registro. En delitos por Internet, víctima, autor y servidor pueden estar en sitios distintos.</li>
+        <li>No usamos la población: comparamos casos absolutos, así que las ciudades grandes siempre salen arriba. Una tasa por cada 100.000 habitantes sería el siguiente paso.</li>
+        <li>El año 2026 está incompleto (hasta el 30 de septiembre) y los registros recientes pueden seguir cambiando.</li>
+        <li>Los nombres se muestran como vienen en el dataset, sin tildes.</li>
+        <li>Las penas vienen de un trabajo académico y la ley puede reformarse. Para un caso concreto, consulta el texto vigente en SUIN-Juriscol.</li>
+      </ul>
+      <div class="vineta errata">
+        <h3>Fe de erratas de la fuente</h3>
+        <ul>
+          <li><strong>269E y 269F:</strong> la presentación no los detalla (salta de 269D a 269G). Sus penas se tomaron de la matriz del portafolio.</li>
+          <li><strong>269I y 269J:</strong> las descripciones de las dos tarjetas quedaron mezcladas; la del 269I habla de «transferencia no consentida de activos», que es la conducta del 269J.</li>
+          <li><strong>269I:</strong> la presentación da 48–120 meses y una multa «según cuantía». La matriz no da cifra porque, según su lectura, la ley remite a las penas del hurto calificado (art. 240 del Código Penal). <span class="por-verificar">por verificar</span></li>
+          <li><strong>269J:</strong> la presentación dice «multa según perjuicio», y la matriz, 200–1.500 SMMLV.</li>
+          <li><strong>269H:</strong> la presentación dice que la pena aumenta «hasta en la mitad» (un 50 %). Creemos que el texto legal habla de un aumento «de la mitad a las tres cuartas partes», pero no lo hemos comprobado contra la ley. <span class="por-verificar">por verificar</span></li>
+          <li>Recomienda «ISO/IEC 27001:2013 o superior»; la matriz y esta herramienta usan la numeración de la versión 2022.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="bloque" id="fuentes">
+      <h2>Fuentes</h2>
+      <ol class="fuentes">
+        <li>Mario Puerta y David Rincón (con su grupo de clase). «Prevención frente a los Delitos Informáticos. Responsabilidad legal en TIC». Trabajo académico, auditoría de seguridad y normas.</li>
+        <li>Ministerio de Defensa Nacional. «Delitos informáticos» (<code>4v6r-wu98</code>), datos.gov.co, licencia CC BY-SA 4.0. <a href="https://www.datos.gov.co/d/4v6r-wu98">datos.gov.co/d/4v6r-wu98</a> · API: <a href="https://www.datos.gov.co/resource/4v6r-wu98.json">resource/4v6r-wu98.json</a>.</li>
+        <li>Matriz Ley 1273 ↔ ISO/IEC 27001:2022, repositorio <code>cumplimiento-ley-1273</code> del portafolio (<code>datos/delitos.csv</code> y <code>datos/controles_iso27001.csv</code>).</li>
+        <li>Ley 1273 de 2009, Ley 1581 de 2012 y Decreto 1377 de 2013, en <a href="https://www.suin-juriscol.gov.co/">SUIN-Juriscol</a>.</li>
+        <li>Documentación de SoQL (Socrata): <a href="https://dev.socrata.com/docs/queries/">dev.socrata.com/docs/queries</a>.</li>
+      </ol>
+      <a class="volver" href="../">Ver qué pasa en tu municipio</a>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p><strong>Divulgación, no asesoría legal.</strong> Datos: Ministerio de Defensa Nacional en datos.gov.co (CC BY-SA 4.0). Código: MIT.</p>
+    <p class="creditos"><a href="https://github.com/ale0009" target="_blank" rel="noopener">Mario Puerta</a> <span class="cuenta">(github.com/ale0009)</span> × <a href="https://www.linkedin.com/in/davidalexanderrinconcorredorkuronoma/" target="_blank" rel="noopener">David Rincón «Kuronoma»</a> <span class="cuenta">(LinkedIn)</span> · <a href="#">Portafolio</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Qué delito informático pasa en tu municipio?</title>
+  <meta name="description" content="Escribe un municipio o departamento de Colombia y mira, en vivo desde datos.gov.co, qué delitos informáticos de la Ley 1273 se denuncian allí, su pena y el control ISO 27001 que los previene.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bangers&family=IBM+Plex+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F9F9F7'/%3E%3Cpath d='M16 3 29 27H3z' fill='%23CB433E' stroke='%230A090A' stroke-width='2.5' stroke-linejoin='round'/%3E%3Cpath d='M16 11v8M16 22v2' stroke='%23FFF' stroke-width='3'/%3E%3C/svg%3E">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="saltar" href="#buscar">Saltar al buscador</a>
+  <header class="cabecera">
+    <span class="kanji" aria-hidden="true">罪</span>
+    <div class="titulo">
+      <p class="antetitulo">Ley 1273 · denuncias en vivo · datos.gov.co</p>
+      <h1>¿Qué delito informático pasa en tu municipio?</h1>
+    </div>
+    <nav class="nav">
+      <a class="boton-linea" href="proceso/">Cómo se hizo</a>
+      <button type="button" class="boton-linea" id="tema" aria-label="Cambiar tema">Tema: auto</button>
+    </nav>
+  </header>
+
+  <main class="tablero">
+    <section class="buscador vineta" aria-labelledby="buscar-t">
+      <form id="form" class="form" autocomplete="off" role="search">
+        <label id="buscar-t" for="buscar">Municipio o departamento</label>
+        <div class="fila-busca">
+          <input id="buscar" name="q" type="search" list="lista-lugares" placeholder="Ej.: Medellín, Leticia, Antioquia…" aria-describedby="ayuda" spellcheck="false">
+          <button type="submit" class="boton-tinta">Ver ficha</button>
+        </div>
+        <datalist id="lista-lugares"></datalist>
+        <p id="ayuda" class="ayuda">Sin tildes también vale. Si el nombre se repite, elige «Municipio · Departamento».</p>
+      </form>
+      <div class="atajos" aria-label="Atajos">
+        <button type="button" class="mini" data-q="Bogota D.C. · Bogota D.C.">Bogotá</button>
+        <button type="button" class="mini" data-q="Medellin · Antioquia">Medellín</button>
+        <button type="button" class="mini" data-q="Cali · Valle del Cauca">Cali</button>
+        <button type="button" class="mini" data-q="Leticia · Amazonas">Leticia</button>
+        <button type="button" class="mini" data-q="Antioquia (departamento)">Antioquia</button>
+        <button type="button" class="mini" data-q="Colombia">Todo el país</button>
+      </div>
+      <p class="estado" id="estado" aria-live="polite"><span class="chip chip-carga">Cargando</span></p>
+    </section>
+
+    <section class="ficha vineta" id="ficha" aria-live="polite" aria-busy="true">
+      <p class="ejemplo" id="ejemplo" hidden>Ejemplo cargado · escribe tu municipio arriba</p>
+      <h2 class="lugar" id="lugar">Consultando…</h2>
+      <p class="sub" id="sub">Pidiendo los datos a datos.gov.co</p>
+      <div class="hud">
+        <div class="medidor"><span class="hud-n" id="h-total">–</span><span class="hud-l">casos denunciados<br><span id="h-rango">2006–2026</span></span></div>
+        <div class="medidor medidor-nivel">
+          <span class="hud-l">Nivel de amenaza</span>
+          <span class="barras-nivel" id="h-barras" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="hud-n rojo" id="h-nivel">–</span>
+          <span class="hud-l" id="h-pct"></span>
+        </div>
+        <div class="medidor"><span class="hud-n cian" id="h-razon">–</span><span class="hud-l" id="h-prom">frente al promedio</span></div>
+      </div>
+    </section>
+
+    <section class="articulos vineta" aria-labelledby="art-t">
+      <h2 id="art-t">Ranking por artículo de la Ley 1273</h2>
+      <p class="leyenda-art"><i class="ley ley-local"></i>aquí <i class="ley ley-pais"></i>marca del país (mismo artículo, % del total nacional)</p>
+      <ol id="ranking" class="ranking"><li class="vacio">Cargando…</li></ol>
+      <button type="button" class="boton-linea ver-resto" id="ver-resto" aria-controls="ranking" aria-expanded="false" hidden>Ver el resto</button>
+    </section>
+
+    <section class="tendencia vineta" aria-labelledby="ten-t">
+      <h2 id="ten-t">Tendencia por año</h2>
+      <div id="g-anios" class="g-caja"></div>
+      <p class="nota" id="ten-nota"></p>
+    </section>
+
+    <section class="deptos vineta" aria-labelledby="dep-t">
+      <h2 id="dep-t">Departamentos</h2>
+      <p class="nota">Casos denunciados por departamento. Toca uno para ver su ficha.</p>
+      <ol id="deptos" class="lista-deptos"></ol>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p><strong>Divulgación, no asesoría legal.</strong> Son denuncias registradas, no todos los delitos que ocurren.
+      Datos: <a href="https://www.datos.gov.co/d/4v6r-wu98">«Delitos informáticos» (4v6r-wu98)</a>, Ministerio de Defensa Nacional en datos.gov.co, licencia CC BY-SA 4.0.
+      Penas: investigación «Prevención frente a los Delitos Informáticos». Controles: matriz Ley 1273 ↔ ISO/IEC 27001:2022.</p>
+    <p class="creditos"><a href="https://github.com/ale0009" target="_blank" rel="noopener">Mario Puerta</a> <span class="cuenta">(github.com/ale0009)</span> × <a href="https://www.linkedin.com/in/davidalexanderrinconcorredorkuronoma/" target="_blank" rel="noopener">David Rincón «Kuronoma»</a> <span class="cuenta">(LinkedIn)</span> · <a href="#">Portafolio</a></p>
+  </footer>
+</body>
+</html>

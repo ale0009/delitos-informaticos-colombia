@@ -1,0 +1,11 @@
+{
+  "name": "delitos-informaticos-colombia",
+  "version": "1.0.0",
+  "description": "¿Qué delito informático pasa en tu municipio? Ficha en vivo por municipio o departamento con la API SoQL de datos.gov.co (Ley 1273). Página estática sin build.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "author": "Mario Alejandro Puerta Alarcón",
+  "scripts": { "test": "node --test", "respaldo": "node scripts/generar-respaldo.mjs" },
+  "engines": { "node": ">=20" }
+}
