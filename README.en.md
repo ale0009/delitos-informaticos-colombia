@@ -29,7 +29,7 @@ It works on GitHub Pages as is. Add `?sin-conexion` to the URL to force offline 
 
 - **API:** dataset [`4v6r-wu98` "Delitos informáticos"](https://www.datos.gov.co/d/4v6r-wu98) from the Colombian Ministry of Defense on datos.gov.co (CC BY-SA 4.0), queried with SoQL straight from the browser (open CORS). Each profile runs two queries, one by article and one by year.
 - **Fallback:** `datos/respaldo-2026-11-10.json` (121 KB), with cases by municipality, article and year. If the API fails, the page uses it and says so ("offline: example data from 10 Nov 2026").
-- **Penalties:** from the research; for 269E and 269F, from the matrix in the `cumplimiento-ley-1273` repo.
+- **Penalties:** from the research; for 269E and 269F, from the matrix in the `cumplimiento-ley-1273` repo; 269H, 269I and 269J were corrected against the official text of the law (see the errata in `/proceso/`).
 - **ISO 27001 controls:** from the Law 1273 ↔ ISO/IEC 27001:2022 matrix in the `cumplimiento-ley-1273` repo.
 
 ## Where it comes from

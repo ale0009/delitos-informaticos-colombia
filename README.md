@@ -29,7 +29,7 @@ Se puede publicar tal cual en GitHub Pages. Con `?sin-conexion` en la URL se fue
 
 - **API:** dataset [`4v6r-wu98` «Delitos informáticos»](https://www.datos.gov.co/d/4v6r-wu98) del Ministerio de Defensa Nacional en datos.gov.co (CC BY-SA 4.0), consultado con SoQL directamente desde el navegador (CORS abierto). Cada ficha hace dos consultas, una por artículo y otra por año.
 - **Respaldo:** `datos/respaldo-2026-11-10.json` (121 KB), con los casos por municipio, artículo y año. Si la API falla, la página lo usa y lo avisa: «Sin conexión: datos de ejemplo del 10 nov 2026».
-- **Penas:** de la investigación; las de 269E y 269F, de la matriz del repo `cumplimiento-ley-1273`.
+- **Penas:** de la investigación; las de 269E y 269F, de la matriz del repo `cumplimiento-ley-1273`; las de 269H, 269I y 269J, corregidas con el texto oficial de la ley (ver la fe de erratas en `/proceso/`).
 - **Controles ISO 27001:** de la matriz Ley 1273 ↔ ISO/IEC 27001:2022 del repo `cumplimiento-ley-1273`.
 
 ## De qué trabajo sale

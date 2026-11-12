@@ -1,5 +1,6 @@
 // Ley 1273 de 2009 (arts. 269A–269J del Código Penal): nombre, pena y controles ISO/IEC 27001:2022.
-// Penas: de la investigación «Prevención frente a los Delitos Informáticos» (Mario Puerta y David Rincón).
+// Penas: de la investigación «Prevención frente a los Delitos Informáticos» (Mario Puerta y David Rincón);
+// 269H, 269I y 269J se corrigieron con el texto oficial de la ley (ver /proceso/, fe de erratas).
 // 269E y 269F no aparecen detallados en esa presentación: su pena sale de la matriz del repo
 // portafolio/cumplimiento-ley-1273 (datos/delitos.csv), igual que todos los controles.
 
@@ -39,6 +40,7 @@ export const CONTROLES = {
 
 const INV = 'investigación';
 const MAT = 'matriz cumplimiento-ley-1273';
+const LEY = 'texto de la Ley 1273 (Secretaría del Senado, verificado el 12 nov 2026)';
 
 /** prision/multa en meses y SMMLV; `nota` cuando la fuente no da cifra o hay discrepancia. */
 export const ARTICULOS = {
@@ -57,11 +59,11 @@ export const ARTICULOS = {
   '269G': { nombre: 'Suplantación de sitios web para capturar datos personales', corto: 'Suplantación web',
     prision: [48, 96], multa: [100, 1000], fuente: INV, controles: ['8.23', '8.20', '6.3', '5.7', '8.16'] },
   '269H': { nombre: 'Circunstancias de agravación punitiva', corto: 'Agravantes',
-    prision: null, multa: null, fuente: INV, nota: 'No es un delito aparte: aumenta la pena del delito base (la investigación lo resume como «hasta la mitad»).', controles: [] },
+    prision: null, multa: null, fuente: LEY, nota: 'No es un delito aparte: aumenta la pena del delito base de la mitad a las tres cuartas partes (art. 269H). La investigación decía «hasta la mitad»; ver fe de erratas.', controles: [] },
   '269I': { nombre: 'Hurto por medios informáticos y semejantes', corto: 'Hurto informático',
-    prision: [48, 120], multa: null, multaTexto: 'según cuantía', fuente: INV, nota: 'La ley remite a las penas del hurto calificado (art. 240 C.P.); ver fe de erratas.', controles: ['8.5', '5.17', '8.2', '8.15', '5.3'] },
+    prision: [72, 168], multa: null, fuente: LEY, nota: 'El art. 269I remite a las penas del hurto calificado (art. 240 C.P.): 6 a 14 años de prisión y sin multa. La investigación decía 48–120 meses y «multa según cuantía»; ver fe de erratas.', controles: ['8.5', '5.17', '8.2', '8.15', '5.3'] },
   '269J': { nombre: 'Transferencia no consentida de activos', corto: 'Transferencia no consentida',
-    prision: [48, 120], multa: [200, 1500], fuente: INV, nota: 'La investigación dice «multa según perjuicio»; la cifra en SMMLV viene de la matriz.', controles: ['5.3', '8.5', '8.15', '8.16', '8.32', '5.24'] },
+    prision: [48, 120], multa: [200, 1500], fuente: LEY, nota: 'Pena y multa del texto del art. 269J (48–120 meses y 200–1.500 SMMLV). La investigación decía «multa según perjuicio».', controles: ['5.3', '8.5', '8.15', '8.16', '8.32', '5.24'] },
 };
 
 export const CODIGOS = Object.keys(ARTICULOS);

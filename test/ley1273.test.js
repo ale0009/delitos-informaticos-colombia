@@ -13,7 +13,7 @@ test('codigoArticulo extrae 269A–269J de la descripción del dataset', () => {
 test('mapeo artículo → pena', () => {
   assert.equal(textoPena(ARTICULOS['269A']), '48–96 meses de prisión · multa de 100–1.000 SMMLV');
   assert.equal(textoPena(ARTICULOS['269C']), '36–72 meses de prisión · sin multa');
-  assert.equal(textoPena(ARTICULOS['269I']), '48–120 meses de prisión · multa según cuantía');
+  assert.equal(textoPena(ARTICULOS['269I']), '72–168 meses de prisión · sin multa');
   assert.equal(textoPena(ARTICULOS['269J']), '48–120 meses de prisión · multa de 200–1.500 SMMLV');
   assert.equal(textoPena(ARTICULOS['269H']), 'Agrava la pena del delito base');
 });
@@ -37,4 +37,12 @@ test('269E y 269F citan la matriz (la investigación no los detalla)', () => {
   assert.match(ARTICULOS['269E'].fuente, /matriz/);
   assert.match(ARTICULOS['269F'].fuente, /matriz/);
   assert.equal(ARTICULOS['269A'].fuente, 'investigación');
+});
+
+test('269H, 269I y 269J siguen el texto de la Ley 1273 (fe de erratas)', () => {
+  assert.deepEqual(ARTICULOS['269I'].prision, [72, 168]); // remite al art. 240 C.P.: 6 a 14 años
+  assert.equal(ARTICULOS['269I'].multa, null);
+  assert.deepEqual(ARTICULOS['269J'].multa, [200, 1500]);
+  assert.match(ARTICULOS['269H'].nota, /de la mitad a las tres cuartas partes/);
+  for (const c of ['269H', '269I', '269J']) assert.match(ARTICULOS[c].fuente, /Ley 1273/);
 });

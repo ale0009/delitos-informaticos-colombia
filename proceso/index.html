@@ -66,7 +66,7 @@
 
     <section class="bloque" id="penas">
       <h2>Penas y multas citadas</h2>
-      <p>SMMLV = salarios mínimos mensuales legales vigentes. Las cifras son las que cita la investigación; donde la presentación no da cifra, usamos la matriz Ley 1273 ↔ ISO 27001 del portafolio y lo indicamos.</p>
+      <p>SMMLV = salarios mínimos mensuales legales vigentes. Las cifras son las que cita la investigación; donde la presentación no da cifra, usamos la matriz Ley 1273 ↔ ISO 27001 del portafolio, y donde se equivocaba (269H, 269I y 269J), el texto de la ley. Lo indicamos en cada fila.</p>
       <div class="tabla-wrap">
         <table class="tabla">
           <thead><tr><th>Art.</th><th>Delito</th><th>Prisión</th><th>Multa</th><th>Fuente</th></tr></thead>
@@ -78,9 +78,9 @@
             <tr><td class="num">269E</td><td>Uso de software malicioso</td><td class="num">48–96 meses</td><td class="num">100–1.000 SMMLV</td><td>matriz (no está en la presentación)</td></tr>
             <tr><td class="num">269F</td><td>Violación de datos personales</td><td class="num">48–96 meses</td><td class="num">100–1.000 SMMLV</td><td>matriz (no está en la presentación)</td></tr>
             <tr><td class="num">269G</td><td>Suplantación de sitios web (phishing)</td><td class="num">48–96 meses</td><td class="num">100–1.000 SMMLV</td><td>investigación</td></tr>
-            <tr><td class="num">269H</td><td>Circunstancias de agravación</td><td colspan="2">«La pena aumenta hasta en la mitad» (Estado, sector financiero, abuso de confianza) <span class="por-verificar">por verificar</span></td><td>investigación</td></tr>
-            <tr><td class="num">269I</td><td>Hurto por medios informáticos</td><td class="num">48–120 meses</td><td>según cuantía</td><td>investigación <span class="por-verificar">por verificar</span></td></tr>
-            <tr><td class="num">269J</td><td>Transferencia no consentida de activos</td><td class="num">48–120 meses</td><td>según perjuicio (investigación) · 200–1.500 SMMLV (matriz)</td><td>ambas</td></tr>
+            <tr><td class="num">269H</td><td>Circunstancias de agravación</td><td colspan="2">La pena del delito base aumenta de la mitad a las tres cuartas partes (Estado, sector financiero, abuso de confianza…)</td><td>ley (la investigación decía «hasta en la mitad»)</td></tr>
+            <tr><td class="num">269I</td><td>Hurto por medios informáticos</td><td class="num">72–168 meses</td><td>— (remite al art. 240 C.P.)</td><td>ley (la investigación decía 48–120 meses y «según cuantía»)</td></tr>
+            <tr><td class="num">269J</td><td>Transferencia no consentida de activos</td><td class="num">48–120 meses</td><td class="num">200–1.500 SMMLV</td><td>ley y matriz (la investigación decía «según perjuicio»)</td></tr>
           </tbody>
         </table>
       </div>
@@ -205,17 +205,17 @@
         <li>No usamos la población: comparamos casos absolutos, así que las ciudades grandes siempre salen arriba. Una tasa por cada 100.000 habitantes sería el siguiente paso.</li>
         <li>El año 2026 está incompleto (hasta el 30 de septiembre) y los registros recientes pueden seguir cambiando.</li>
         <li>Los nombres se muestran como vienen en el dataset, sin tildes.</li>
-        <li>Las penas vienen de un trabajo académico y la ley puede reformarse. Para un caso concreto, consulta el texto vigente en SUIN-Juriscol.</li>
+        <li>Las penas vienen de un trabajo académico (las del 269H, 269I y 269J, corregidas con el texto de la ley) y la ley puede reformarse. Para un caso concreto, consulta el texto vigente en SUIN-Juriscol.</li>
       </ul>
       <div class="vineta errata">
         <h3>Fe de erratas de la fuente</h3>
+        <p>Cada punto dice qué decía el trabajo, qué es lo correcto y qué usa la herramienta. Las penas se contrastaron el 12 nov 2026 con el texto de la <a href="http://www.secretariasenado.gov.co/senado/basedoc/ley_1273_2009.html">Ley 1273 de 2009 en la Secretaría del Senado</a>.</p>
         <ul>
-          <li><strong>269E y 269F:</strong> la presentación no los detalla (salta de 269D a 269G). Sus penas se tomaron de la matriz del portafolio.</li>
-          <li><strong>269I y 269J:</strong> las descripciones de las dos tarjetas quedaron mezcladas; la del 269I habla de «transferencia no consentida de activos», que es la conducta del 269J.</li>
-          <li><strong>269I:</strong> la presentación da 48–120 meses y una multa «según cuantía». La matriz no da cifra porque, según su lectura, la ley remite a las penas del hurto calificado (art. 240 del Código Penal). <span class="por-verificar">por verificar</span></li>
-          <li><strong>269J:</strong> la presentación dice «multa según perjuicio», y la matriz, 200–1.500 SMMLV.</li>
-          <li><strong>269H:</strong> la presentación dice que la pena aumenta «hasta en la mitad» (un 50 %). Creemos que el texto legal habla de un aumento «de la mitad a las tres cuartas partes», pero no lo hemos comprobado contra la ley. <span class="por-verificar">por verificar</span></li>
-          <li>Recomienda «ISO/IEC 27001:2013 o superior»; la matriz y esta herramienta usan la numeración de la versión 2022.</li>
+          <li><strong>269I y 269J, descripciones cruzadas.</strong> <b>El trabajo decía</b> que el 269I (hurto por medios informáticos) era la «transferencia no consentida de activos». <b>Lo correcto:</b> esa es la conducta del 269J; el 269I es hurtar manipulando un sistema informático o suplantando a un usuario ante los sistemas de autenticación. <b>La herramienta usa</b> el nombre y la conducta de cada artículo según la ley.</li>
+          <li><strong>269I, pena.</strong> <b>El trabajo decía</b> 48 a 120 meses de prisión y una multa «según cuantía». <b>Lo correcto:</b> el art. 269I no fija pena propia: remite a «las penas señaladas en el artículo 240» del Código Penal (hurto calificado), que son de 6 a 14 años de prisión, sin multa (<a href="http://www.secretariasenado.gov.co/senado/basedoc/ley_0599_2000_pr009.html">art. 240, modificado por la Ley 1142 de 2007</a>). Los 48 a 120 meses son la pena del 269J. <b>La herramienta usa</b> 72 a 168 meses de prisión, sin multa.</li>
+          <li><strong>269J, multa.</strong> <b>El trabajo decía</b> «multa según perjuicio». <b>Lo correcto:</b> el art. 269J fija 48 a 120 meses de prisión y una multa de 200 a 1.500 SMMLV, que sube en la mitad si la cuantía supera los 200 SMMLV. <b>La herramienta usa</b> 48 a 120 meses y 200 a 1.500 SMMLV.</li>
+          <li><strong>269H, agravantes.</strong> <b>El trabajo decía</b> que la pena aumenta «hasta en la mitad» (un 50 %). <b>Lo correcto:</b> el art. 269H dice que las penas «se aumentarán de la mitad a las tres cuartas partes» (del 50 % al 75 %). <b>La herramienta usa</b> esa frase de la ley en la ficha del 269H.</li>
+          <li><strong>ISO/IEC 27001.</strong> <b>El trabajo decía</b> «ISO/IEC 27001:2013 o superior». <b>Lo correcto:</b> la versión vigente es la de 2022, que renumeró los controles del Anexo A. <b>La herramienta usa</b> la numeración de 2022 (por ejemplo, 8.5 «Autenticación segura»).</li>
         </ul>
       </div>
     </section>
